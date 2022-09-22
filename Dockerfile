@@ -1,16 +1,7 @@
-FROM ubuntu:20.04
+# SUPER small base image 
+# https://lipanski.com/posts/smallest-docker-image-static-website
+FROM lipanski/docker-static-website:latest
 
-ENV LC_ALL=C.UTF-8
-ENV LANG=C.UTF-8
+Add app .
 
-RUN apt-get update -y && apt-get install python3-pip -y
-
-ADD requirements.txt /app/
-WORKDIR /app
-RUN /bin/bash -c "pip3 install --no-cache-dir -r requirements.txt"
-
-ADD /app/ /app/
-
-EXPOSE 8080
-
-CMD ["gunicorn", "-b", "0.0.0.0:8080", "wsgi", "-k", "gevent"]
+CMD ["/busybox", "httpd", "-f", "-v", "-p", "3000", "-c", "httpd.conf"]

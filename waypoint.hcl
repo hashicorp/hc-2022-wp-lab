@@ -25,7 +25,7 @@ variable "aws_region" {
 
 project = "hc-lab-demo"
 
-app "local-dev" {
+app "dev" {
   build {
     use "docker" {
       dockerfile = "Dockerfile"
@@ -45,7 +45,7 @@ app "local-dev" {
 
   deploy {
     use "docker" {
-      service_port = 8080
+      service_port = 3000
       static_environment = {
         PLATFORM = "docker (dev)"
       }
@@ -77,7 +77,7 @@ app "staging" {
 
   deploy {
     use "aws-ecs" {
-      service_port = 8080
+      service_port = 3000
       static_environment = {
         PLATFORM = "aws-ecs (staging)"
       }
@@ -112,7 +112,7 @@ app "prod" {
   deploy {
     use "kubernetes" {
       probe_path = "/"
-      service_port = 8080
+      service_port = 3000
       static_environment = {
         PLATFORM = "kubernetes (prod)"
       }
@@ -122,7 +122,7 @@ app "prod" {
   release {
     use "kubernetes" {
       load_balancer = true
-      port          = 8080
+      port          = 3000
     }
   }
 }
