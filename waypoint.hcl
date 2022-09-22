@@ -53,7 +53,7 @@ app "dev" {
   }
 }
 
-app "staging" {
+app "ecs" {
   runner {
     profile = "ecs-ECS-RUNNER"
   }
@@ -87,7 +87,7 @@ app "staging" {
   }
 }
 
-app "prod" {
+app "kubernetes" {
   runner {
     profile = "kubernetes-KUBE-RUNNER"
   }
