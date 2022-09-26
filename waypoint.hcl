@@ -23,7 +23,7 @@ variable "aws_region" {
   env = ["TF_VAR_region"]
 }
 
-project = "hc-lab-demo"
+project = "hc-lab-hig-demo"
 
 app "dev" {
   build {
