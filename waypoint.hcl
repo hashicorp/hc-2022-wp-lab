@@ -61,7 +61,7 @@ app "ecs" {
     registry {
       use "docker" {
         image = "${var.registry_username}/${var.registry_imagename}"
-        tag = "staging"
+        tag = "testing"
         local = false
         auth {
           username = var.registry_username
@@ -75,7 +75,7 @@ app "ecs" {
     use "aws-ecs" {
       service_port = 3000
       static_environment = {
-        PLATFORM = "aws-ecs (staging)"
+        PLATFORM = "aws-ecs (ca-central)"
       }
       region = var.aws_region
       memory = 512
@@ -93,7 +93,7 @@ app "ecs" {
 //     registry {
 //       use "docker" {
 //         image = "${var.registry_username}/${var.registry_imagename}"
-//         tag = "prod"
+//         tag = "testing"
 //         local = false
 //         auth {
 //           username = var.registry_username
@@ -108,7 +108,7 @@ app "ecs" {
 //       probe_path = "/"
 //       service_port = 3000
 //       static_environment = {
-//         PLATFORM = "kubernetes (prod)"
+//         PLATFORM = "kubernetes (us-west)"
 //       }
 //     }
 //   }
