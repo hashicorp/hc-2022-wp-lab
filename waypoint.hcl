@@ -110,6 +110,16 @@ app "ecs" {
 //       static_environment = {
 //         PLATFORM = "kubernetes (us-west)"
 //       }
+//       memory {
+//         request = "64Mi"
+//         limit   = "128Mi"
+//       }
+
+//       autoscale {
+//         min_replicas = 1
+//         max_replicas = 5
+//         cpu_percent = 20
+//       }
 //     }
 //   }
 
