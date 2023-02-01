@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 (function () {
   var lastTime = 0;
   var vendors = ['webkit', 'moz'];
