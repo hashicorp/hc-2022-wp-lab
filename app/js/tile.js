@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 function Tile(position, value) {
   this.x                = position.x;
   this.y                = position.y;

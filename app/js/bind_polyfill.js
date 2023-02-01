@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) HashiCorp, Inc.
+ * SPDX-License-Identifier: MPL-2.0
+ */
+
 Function.prototype.bind = Function.prototype.bind || function (target) {
   var self = this;
   return function (args) {
